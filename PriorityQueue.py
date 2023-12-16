@@ -5,11 +5,11 @@ class Priority_Queue:
         self.front = self.rear = -1
 
     def EnQueue(self,value,priority):
-        if self.front == self.rear == -1:
-            self.front =0
-        elif self.rear+1 == self.size:
+        if self.rear+1 == self.size:
             print("Overflow!!!")
             return
+        elif self.front == self.rear == -1:
+            self.front =0
         self.queue.append((value,priority))
         self.queue = sorted(self.queue, key=lambda x: (x[1] is not None, x[1]))
         self.rear +=1
@@ -28,7 +28,7 @@ class Priority_Queue:
         for i in range(len(self.queue)):
             print(self.queue[i][0])
 
-            
+
 Q = Priority_Queue(5)
 Q.EnQueue(1,1)
 Q.EnQueue(0,0)
