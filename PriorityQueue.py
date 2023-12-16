@@ -21,12 +21,13 @@ class Priority_Queue:
         self.front+=1
         val = self.queue[0][0]
         self.queue.pop(0)
-        print(val)
+        return val
 
 
     def display(self):
         for i in range(len(self.queue)):
             print(self.queue[i][0])
+        print()
 
 
 Q = Priority_Queue(5)
@@ -36,7 +37,5 @@ Q.EnQueue(5,5)
 Q.EnQueue(3,3)
 Q.EnQueue(4,4)
 Q.display()
-print()
-Q.DeQueue()
-print()
+print("deleted value:",Q.DeQueue())
 Q.display()
