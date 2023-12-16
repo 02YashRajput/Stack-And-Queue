@@ -9,7 +9,7 @@ class Priority_Queue:
         return False
     
     def isFull(self):
-        if self.rear+1-self.front ==self.size:
+        if (self.rear+1-self.front) ==self.size:
             return True
         return False
 
