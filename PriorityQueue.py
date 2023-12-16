@@ -3,9 +3,18 @@ class Priority_Queue:
         self.size = size
         self.queue = []
         self.front = self.rear = -1
+    def isEmpty(self):
+        if self.front == -1 or self.front>self.rear:
+            return True
+        return False
+    
+    def isFull(self):
+        if self.rear+1-self.front ==self.size:
+            return True
+        return False
 
     def EnQueue(self,value,priority):
-        if self.rear+1 == self.size:
+        if self.isFull():
             print("Overflow!!!")
             return
         elif self.front == self.rear == -1:
@@ -15,7 +24,7 @@ class Priority_Queue:
         self.rear +=1
 
     def DeQueue(self):
-        if self.front ==-1 or self.front>self.rear:
+        if self.isEmpty():
             print("Underflow!!!")
             return
         self.front+=1
@@ -38,4 +47,6 @@ Q.EnQueue(3,3)
 Q.EnQueue(4,4)
 Q.display()
 print("deleted value:",Q.DeQueue())
+Q.display()
+Q.EnQueue(2,2)
 Q.display()
