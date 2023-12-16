@@ -27,6 +27,8 @@ class Priority_Queue:
     def display(self):
         for i in range(len(self.queue)):
             print(self.queue[i][0])
+
+            
 Q = Priority_Queue(5)
 Q.EnQueue(1,1)
 Q.EnQueue(0,0)
