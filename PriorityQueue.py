@@ -20,7 +20,7 @@ class Priority_Queue:
         elif self.front == self.rear == -1:
             self.front =0
         self.queue.append((value,priority))
-        self.queue = sorted(self.queue, key=lambda x: (x[1] is not None, x[1]))
+        self.queue = sorted(self.queue, key=lambda x: x[1])
         self.rear +=1
 
     def DeQueue(self):
